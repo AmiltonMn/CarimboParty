@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Carimbo Party"
+run/main_scene="uid://tfsnfg0wqogt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
