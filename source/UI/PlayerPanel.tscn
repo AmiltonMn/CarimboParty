@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bftasvp5dgwep"]
 
+[ext_resource type="Script" uid="uid://eee7gqbaedl4" path="res://source/UI/PlayerContainer.gd" id="1_nyfvb"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_pw781"]
 [ext_resource type="Script" uid="uid://mlh8q6lgr33a" path="res://source/UI/head_container.gd" id="1_xfor6"]
 [ext_resource type="Texture2D" uid="uid://dmqyc8q6rf74r" path="res://source/assets/seta.png" id="2_nyfvb"]
@@ -14,75 +15,101 @@ anchor_bottom = 1.0
 offset_right = -880.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=732314192]
+[node name="PlayerContainer" type="VBoxContainer" parent="." unique_id=732314192]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+script = ExtResource("1_nyfvb")
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=2005141307]
+[node name="Label" type="Label" parent="PlayerContainer" unique_id=2005141307]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 6
 text = "Player 1"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="HeadContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=251973543]
+[node name="HeadContainer" type="HBoxContainer" parent="PlayerContainer" unique_id=251973543]
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 10
 script = ExtResource("1_xfor6")
 
-[node name="LeftButton_Head" type="Button" parent="VBoxContainer/HeadContainer" unique_id=2122984548]
+[node name="LeftButton_Head" type="Button" parent="PlayerContainer/HeadContainer" unique_id=2122984548]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 icon = ExtResource("2_nyfvb")
+flat = true
 expand_icon = true
 
-[node name="PlayerHead" type="TextureRect" parent="VBoxContainer/HeadContainer" unique_id=1141658777]
+[node name="PlayerHead" type="TextureRect" parent="PlayerContainer/HeadContainer" unique_id=1141658777]
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("1_pw781")
 stretch_mode = 2
 
-[node name="RightButton_Head" type="Button" parent="VBoxContainer/HeadContainer" unique_id=2101001602]
+[node name="RightButton_Head" type="Button" parent="PlayerContainer/HeadContainer" unique_id=2101001602]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 icon = ExtResource("4_80ckk")
+flat = true
 icon_alignment = 2
 expand_icon = true
 text_direction = 3
 
-[node name="BodyContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2056197411]
+[node name="BodyContainer" type="HBoxContainer" parent="PlayerContainer" unique_id=2056197411]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 2
 script = ExtResource("5_llsrr")
 
-[node name="LeftButton_Body" type="Button" parent="VBoxContainer/BodyContainer" unique_id=117389012]
+[node name="LeftButton_Body" type="Button" parent="PlayerContainer/BodyContainer" unique_id=117389012]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 icon = ExtResource("2_nyfvb")
+flat = true
 expand_icon = true
 
-[node name="PlayerBody" type="TextureRect" parent="VBoxContainer/BodyContainer" unique_id=377066361]
+[node name="PlayerBody" type="TextureRect" parent="PlayerContainer/BodyContainer" unique_id=377066361]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("1_pw781")
 stretch_mode = 2
 
-[node name="RightButton_Body" type="Button" parent="VBoxContainer/BodyContainer" unique_id=972617986]
+[node name="RightButton_Body" type="Button" parent="PlayerContainer/BodyContainer" unique_id=972617986]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 icon = ExtResource("4_80ckk")
+flat = true
 icon_alignment = 2
 expand_icon = true
 text_direction = 3
 
-[connection signal="pressed" from="VBoxContainer/HeadContainer/LeftButton_Head" to="VBoxContainer/HeadContainer" method="_on_left_button_head_pressed"]
-[connection signal="pressed" from="VBoxContainer/HeadContainer/RightButton_Head" to="VBoxContainer/HeadContainer" method="_on_right_button_head_pressed"]
-[connection signal="pressed" from="VBoxContainer/BodyContainer/LeftButton_Body" to="VBoxContainer/BodyContainer" method="_on_left_button_body_pressed"]
-[connection signal="pressed" from="VBoxContainer/BodyContainer/RightButton_Body" to="VBoxContainer/BodyContainer" method="_on_right_button_body_pressed"]
+[node name="Character" type="VBoxContainer" parent="PlayerContainer" unique_id=2020301844]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="CharacterHead" type="TextureRect" parent="PlayerContainer/Character" unique_id=1887211759]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("1_pw781")
+
+[node name="CharacterBody" type="TextureRect" parent="PlayerContainer/Character" unique_id=598050461]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("1_pw781")
+
+[connection signal="pressed" from="PlayerContainer/HeadContainer/LeftButton_Head" to="PlayerContainer/HeadContainer" method="_on_left_button_head_pressed"]
+[connection signal="pressed" from="PlayerContainer/HeadContainer/RightButton_Head" to="PlayerContainer/HeadContainer" method="_on_right_button_head_pressed"]
+[connection signal="pressed" from="PlayerContainer/BodyContainer/LeftButton_Body" to="PlayerContainer/BodyContainer" method="_on_left_button_body_pressed"]
+[connection signal="pressed" from="PlayerContainer/BodyContainer/RightButton_Body" to="PlayerContainer/BodyContainer" method="_on_right_button_body_pressed"]
