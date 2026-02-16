@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://1gfy8fyw6yt2"]
+[gd_scene format=3 uid="uid://ba7rg78aoovgw"]
 
-[ext_resource type="PackedScene" uid="uid://bftasvp5dgwep" path="res://source/UI/PlayerPanel.tscn" id="1_3e8sy"]
+[ext_resource type="PackedScene" path="res://source/UI/PlayerPanel.tscn" id="1_3e8sy"]
 [ext_resource type="Script" uid="uid://c5iur0j3vo3qu" path="res://source/UI/buttons.gd" id="2_cl8vs"]
 
 [node name="PlayerSelect" type="Control" unique_id=381516989]
@@ -75,3 +75,4 @@ size_flags_horizontal = 10
 text = "Jogar"
 
 [connection signal="pressed" from="Buttons/BackButton" to="Buttons" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Buttons/PlayButton" to="Buttons" method="_on_play_button_pressed"]

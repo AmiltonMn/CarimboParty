@@ -1,9 +1,11 @@
 extends VBoxContainer
 
+var mapa_territorios: PackedScene = preload("res://source/Minigames/guerra_de_territorios/mapa.tscn")
+
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_sair_pressed() -> void:

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bi6nheiy1gxwv"]
+
+[ext_resource type="Script" uid="uid://bvsa7x4jx8b74" path="res://source/Minigames/guerra_de_territorios/chão.gd" id="1_0nkce"]
+[ext_resource type="PackedScene" uid="uid://bp3bc8xu8cj0l" path="res://source/Player/carimbo.tscn" id="1_smi6i"]
+
+[node name="mapa" type="Node2D" unique_id=2056223166]
+
+[node name="chão" type="Node2D" parent="." unique_id=1912600790]
+script = ExtResource("1_0nkce")
+
+[node name="carimbos" type="Node2D" parent="chão" unique_id=1379040817]
+
+[node name="carimbo" parent="chão/carimbos" unique_id=1908042249 instance=ExtResource("1_smi6i")]
+position = Vector2(979, 90)
+
+[node name="lines" type="Node2D" parent="chão" unique_id=470845228]
+
+[node name="carimboLine" type="Line2D" parent="chão/lines" unique_id=427490266]
+default_color = Color(1, 0, 0, 1)
+
+[connection signal="paint" from="chão/carimbos/carimbo" to="chão" method="_on_carimbo_paint"]
