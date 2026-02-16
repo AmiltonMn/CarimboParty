@@ -48,8 +48,11 @@ text = "Conquistas"
 
 [node name="Configurações" type="Button" parent="ContainerMenu" unique_id=335544073]
 layout_mode = 2
-text = "Jogar"
+text = "Configurações"
 
 [node name="Sair" type="Button" parent="ContainerMenu" unique_id=2079370327]
 layout_mode = 2
 text = "Sair"
+
+[connection signal="pressed" from="ContainerMenu/Jogar" to="ContainerMenu" method="_on_jogar_pressed"]
+[connection signal="pressed" from="ContainerMenu/Sair" to="ContainerMenu" method="_on_sair_pressed"]
