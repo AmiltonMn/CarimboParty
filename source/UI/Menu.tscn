@@ -53,3 +53,5 @@ text = "Jogar"
 [node name="Sair" type="Button" parent="ContainerMenu" unique_id=2079370327]
 layout_mode = 2
 text = "Sair"
+
+[connection signal="pressed" from="ContainerMenu/Jogar" to="ContainerMenu" method="_on_jogar_pressed"]
