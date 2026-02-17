@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b5pd3deeay7m8"]
+
+[ext_resource type="Script" uid="uid://hs1xes80h0mq" path="res://source/Player/character.gd" id="1_tqv4n"]
+[ext_resource type="Texture2D" uid="uid://1n870ld4ll6b" path="res://source/assets/carimbos/heads/CabecaPixel.png" id="2_ip85u"]
+[ext_resource type="Texture2D" uid="uid://tm7b1ylqihva" path="res://source/assets/carimbos/bodies/CorpoPixel.png" id="3_qa6en"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60cbu"]
+size = Vector2(127, 223)
+
+[node name="Character" type="CharacterBody2D" unique_id=2084991173]
+script = ExtResource("1_tqv4n")
+
+[node name="Head" type="Sprite2D" parent="." unique_id=904940389]
+texture = ExtResource("2_ip85u")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1522291489]
+position = Vector2(0, 98)
+texture = ExtResource("3_qa6en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=967907018]
+position = Vector2(0.5, 47.5)
+shape = SubResource("RectangleShape2D_60cbu")
