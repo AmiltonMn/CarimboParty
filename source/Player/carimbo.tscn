@@ -14,3 +14,8 @@ shape = SubResource("RectangleShape2D_ma86f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1444477485]
 texture = ExtResource("1_w8bt7")
+
+[node name="move_cooldown" type="Timer" parent="." unique_id=333889049]
+wait_time = 0.3
+
+[connection signal="timeout" from="move_cooldown" to="." method="_on_move_cooldown_timeout"]
