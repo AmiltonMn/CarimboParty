@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dd1esargy4cw2"]
+
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_d3yt6"]
+[ext_resource type="Script" uid="uid://bstpcc6ctufxl" path="res://source/Minigames/guerra_de_territorios/bloco.gd" id="1_wsai6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsai6"]
+size = Vector2(126, 126)
+
+[node name="bloco" type="Node2D" unique_id=1333089396]
+script = ExtResource("1_wsai6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242589063]
+texture = ExtResource("1_d3yt6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=586213609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1525360108]
+shape = SubResource("RectangleShape2D_wsai6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
