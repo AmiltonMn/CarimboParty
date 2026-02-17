@@ -17,11 +17,15 @@ func _on_left_button_head_pressed() -> void:
 	
 	var image = Image.load_from_file(headsPath + headsList[currentHeadIndex])
 	
-	$PlayerHead.texture = ImageTexture.create_from_image(image)
+	change_texture(image)
 
 func _on_right_button_head_pressed() -> void:
 	currentHeadIndex =  0 if currentHeadIndex + 1 > headsList.size() - 1 else (currentHeadIndex + 1)
 	
 	var image = Image.load_from_file(headsPath + headsList[currentHeadIndex])
 	
+	change_texture(image)
+
+func change_texture(image: Image) -> void:
 	$PlayerHead.texture = ImageTexture.create_from_image(image)
+	$"../Character/CharacterHead".texture = ImageTexture.create_from_image(image)

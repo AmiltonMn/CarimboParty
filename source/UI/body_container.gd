@@ -17,11 +17,15 @@ func _on_left_button_body_pressed() -> void:
 	
 	var image = Image.load_from_file(bodiesPath + bodiesList[currentBodyIndex])
 	
-	$PlayerBody.texture = ImageTexture.create_from_image(image)
+	change_texture(image)
 
 func _on_right_button_body_pressed() -> void:
 	currentBodyIndex =  0 if currentBodyIndex + 1 > bodiesList.size() - 1 else (currentBodyIndex + 1)
 	
 	var image = Image.load_from_file(bodiesPath + bodiesList[currentBodyIndex])
 	
+	change_texture(image)
+
+func change_texture(image: Image) -> void:
 	$PlayerBody.texture = ImageTexture.create_from_image(image)
+	$"../Character/CharacterBody".texture = ImageTexture.create_from_image(image)

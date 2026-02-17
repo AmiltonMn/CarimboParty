@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ba7rg78aoovgw"]
+[gd_scene format=3 uid="uid://1gfy8fyw6yt2"]
 
-[ext_resource type="PackedScene" path="res://source/UI/PlayerPanel.tscn" id="1_3e8sy"]
+[ext_resource type="PackedScene" uid="uid://bftasvp5dgwep" path="res://source/UI/PlayerPanel.tscn" id="1_3e8sy"]
 [ext_resource type="Script" uid="uid://c5iur0j3vo3qu" path="res://source/UI/buttons.gd" id="2_cl8vs"]
 
 [node name="PlayerSelect" type="Control" unique_id=381516989]
@@ -10,6 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="PlayersContainer" type="HBoxContainer" parent="." unique_id=1447981609]
 layout_mode = 1
@@ -20,9 +22,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FirstPlayer" type="VBoxContainer" parent="PlayersContainer" unique_id=365509889]
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
 
 [node name="PlayerPanel" parent="PlayersContainer/FirstPlayer" unique_id=1409003096 instance=ExtResource("1_3e8sy")]
 layout_mode = 2
@@ -30,7 +32,6 @@ layout_mode = 2
 [node name="SecondPlayer" type="VBoxContainer" parent="PlayersContainer" unique_id=117192342]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
 
 [node name="PlayerPanel" parent="PlayersContainer/SecondPlayer" unique_id=921770553 instance=ExtResource("1_3e8sy")]
 layout_mode = 2
@@ -38,7 +39,6 @@ layout_mode = 2
 [node name="ThirdPlayer" type="VBoxContainer" parent="PlayersContainer" unique_id=2053165270]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
 
 [node name="PlayerPanel" parent="PlayersContainer/ThirdPlayer" unique_id=59792734 instance=ExtResource("1_3e8sy")]
 layout_mode = 2
@@ -46,7 +46,6 @@ layout_mode = 2
 [node name="FourthPlayer" type="VBoxContainer" parent="PlayersContainer" unique_id=1615636569]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
 
 [node name="PlayerPanel" parent="PlayersContainer/FourthPlayer" unique_id=305721854 instance=ExtResource("1_3e8sy")]
 layout_mode = 2
