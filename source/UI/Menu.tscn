@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bb5bp3q668t3w" path="res://source/container_menu.gd" id="1_ynfrj"]
 
+[sub_resource type="Theme" id="Theme_lewno"]
+
 [node name="Control" type="Control" unique_id=1960172498]
 layout_mode = 3
 anchors_preset = 15
@@ -29,12 +31,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -138.0
-offset_top = -142.0
-offset_right = 138.0
-offset_bottom = 142.0
+offset_left = -210.0
+offset_top = -282.0
+offset_right = 210.0
+offset_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_lewno")
+theme_override_constants/separation = 25
 alignment = 1
 script = ExtResource("1_ynfrj")
 

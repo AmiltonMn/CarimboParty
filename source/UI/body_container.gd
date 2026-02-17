@@ -28,4 +28,4 @@ func _on_right_button_body_pressed() -> void:
 
 func change_texture(image: Image) -> void:
 	$PlayerBody.texture = ImageTexture.create_from_image(image)
-	$"../Character/CharacterBody".texture = ImageTexture.create_from_image(image)
+	$"../CharacterContainer/Character".change_body(image)
