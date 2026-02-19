@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bftasvp5dgwep"]
+
+[ext_resource type="Script" uid="uid://eee7gqbaedl4" path="res://source/UI/PlayerContainer.gd" id="1_nyfvb"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_pw781"]
+[ext_resource type="Script" uid="uid://mlh8q6lgr33a" path="res://source/UI/head_container.gd" id="1_xfor6"]
+[ext_resource type="Texture2D" uid="uid://dmqyc8q6rf74r" path="res://source/assets/seta.png" id="2_nyfvb"]
+[ext_resource type="Texture2D" uid="uid://dxvqwkwc4jmvl" path="res://source/assets/Seta Direita.png" id="4_80ckk"]
+[ext_resource type="Script" uid="uid://bxgsfh1wovykc" path="res://source/UI/body_container.gd" id="5_llsrr"]
+
+[node name="PlayerPanel" type="Control" unique_id=1409003096]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="PlayerContainer" type="VBoxContainer" parent="." unique_id=732314192]
+custom_minimum_size = Vector2(285, 1080)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -540.0
+offset_right = 148.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nyfvb")
+
+[node name="PlayerName" type="Label" parent="PlayerContainer" unique_id=2005141307]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HeadContainer" type="HBoxContainer" parent="PlayerContainer" unique_id=251973543]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+script = ExtResource("1_xfor6")
+
+[node name="LeftButton_Head" type="Button" parent="PlayerContainer/HeadContainer" unique_id=2122984548]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+icon = ExtResource("2_nyfvb")
+flat = true
+expand_icon = true
+
+[node name="PlayerHead" type="TextureRect" parent="PlayerContainer/HeadContainer" unique_id=1141658777]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("1_pw781")
+stretch_mode = 2
+
+[node name="RightButton_Head" type="Button" parent="PlayerContainer/HeadContainer" unique_id=2101001602]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+icon = ExtResource("4_80ckk")
+flat = true
+icon_alignment = 2
+expand_icon = true
+text_direction = 3
+
+[node name="BodyContainer" type="HBoxContainer" parent="PlayerContainer" unique_id=2056197411]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+script = ExtResource("5_llsrr")
+
+[node name="LeftButton_Body" type="Button" parent="PlayerContainer/BodyContainer" unique_id=117389012]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+icon = ExtResource("2_nyfvb")
+flat = true
+expand_icon = true
+
+[node name="PlayerBody" type="TextureRect" parent="PlayerContainer/BodyContainer" unique_id=377066361]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_pw781")
+stretch_mode = 2
+
+[node name="RightButton_Body" type="Button" parent="PlayerContainer/BodyContainer" unique_id=972617986]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+icon = ExtResource("4_80ckk")
+flat = true
+icon_alignment = 2
+expand_icon = true
+text_direction = 3
+
+[node name="CharacterContainer" type="VBoxContainer" parent="PlayerContainer" unique_id=2020301844]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+alignment = 1
+
+[connection signal="pressed" from="PlayerContainer/HeadContainer/LeftButton_Head" to="PlayerContainer/HeadContainer" method="_on_left_button_head_pressed"]
+[connection signal="pressed" from="PlayerContainer/HeadContainer/RightButton_Head" to="PlayerContainer/HeadContainer" method="_on_right_button_head_pressed"]
+[connection signal="pressed" from="PlayerContainer/BodyContainer/LeftButton_Body" to="PlayerContainer/BodyContainer" method="_on_left_button_body_pressed"]
+[connection signal="pressed" from="PlayerContainer/BodyContainer/RightButton_Body" to="PlayerContainer/BodyContainer" method="_on_right_button_body_pressed"]

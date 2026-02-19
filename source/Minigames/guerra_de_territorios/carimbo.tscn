@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bp3bc8xu8cj0l"]
+
+[ext_resource type="Texture2D" uid="uid://coph82i6lglwq" path="res://source/assets/carimbo.png" id="2_muss4"]
+
+[sub_resource type="GDScript" id="GDScript_edqfa"]
+script/source = "extends CharacterBody2D
+
+class_name carimbo
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+var can_move: bool = true
+
+func _ready() -> void:
+	position = Vector2(64, 64)
+
+func _physics_process(delta: float) -> void:
+	var direction := Input.get_vector(\"Esquerda\", \"Direita\", \"Cima\", \"Baixo\").round()
+	
+	if direction and can_move:
+		position.x += direction.x * 128
+		position.y += direction.y * 128
+		can_move = false
+		$Timer.start()
+		
+		
+	#if direction:
+		#velocity = direction * SPEED
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
+		#velocity.y = move_toward(velocity.y, 0, SPEED)
+#
+	#move_and_slide()
+
+func _on_timer_timeout() -> void:
+	can_move = true
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma86f"]
+size = Vector2(76, 78)
+
+[node name="carimbo" type="CharacterBody2D" unique_id=1908042249]
+script = SubResource("GDScript_edqfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1601089765]
+shape = SubResource("RectangleShape2D_ma86f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1444477485]
+texture = ExtResource("2_muss4")
+
+[node name="Timer" type="Timer" parent="." unique_id=1037322119]
+wait_time = 0.3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
