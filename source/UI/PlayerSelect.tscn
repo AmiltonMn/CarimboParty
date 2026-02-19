@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://1gfy8fyw6yt2"]
+
+[ext_resource type="Script" uid="uid://cfeea0jvgxf2d" path="res://source/UI/players_container.gd" id="1_gbwla"]
+[ext_resource type="Script" uid="uid://c5iur0j3vo3qu" path="res://source/UI/buttons.gd" id="2_cl8vs"]
+
+[node name="PlayerSelect" type="Control" unique_id=381516989]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PlayersContainer" type="HBoxContainer" parent="." unique_id=2042200580]
+clip_contents = true
+custom_minimum_size = Vector2(1920, 1080)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+alignment = 1
+script = ExtResource("1_gbwla")
+
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=1341140829]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_cl8vs")
+
+[node name="BackButton" type="Button" parent="Buttons" unique_id=306846902]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+text = "Voltar"
+
+[node name="PlayButton" type="Button" parent="Buttons" unique_id=689930203]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Jogar"
+
+[connection signal="pressed" from="Buttons/BackButton" to="Buttons" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Buttons/PlayButton" to="Buttons" method="_on_play_button_pressed"]
