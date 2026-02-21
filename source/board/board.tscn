@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://bq2i2imtlllx8"]
 
+[ext_resource type="Script" uid="uid://baya2ndn8c7ud" path="res://source/board/path_follow_2d.gd" id="1_7voth"]
+
+[sub_resource type="Curve2D" id="Curve2D_m2ym1"]
+
 [node name="Board" type="Node2D" unique_id=1557009178]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1449616985]
+curve = SubResource("Curve2D_m2ym1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1652932577]
+script = ExtResource("1_7voth")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D" unique_id=1357228362]
